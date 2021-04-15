@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  WalletConnectorError.swift
 //  
 //
 //  Created by Stefano on 15.04.21.

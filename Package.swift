@@ -10,14 +10,22 @@ let package = Package(
         .library(
             name: "WalletConnector",
             targets: ["WalletConnector"]),
+        .library(
+            name: "WalletConnectorUI",
+            targets: ["WalletConnectorUI"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/WalletConnect/WalletConnectSwift.git", from: Version(1, 3, 1)),
+        .package(
+            url: "https://github.com/WalletConnect/WalletConnectSwift.git",
+            from: Version(1, 3, 1)),
     ],
     targets: [
         .target(
             name: "WalletConnector",
             dependencies: ["WalletConnectSwift"]),
+        .target(
+            name: "WalletConnectorUI",
+            dependencies: ["WalletConnector"]),
         .testTarget(
             name: "WalletConnectorTests",
             dependencies: ["WalletConnector"]),

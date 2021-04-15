@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  WalletConnector.swift
 //  
 //
 //  Created by Stefano on 15.04.21.
