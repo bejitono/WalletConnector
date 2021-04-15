@@ -20,15 +20,46 @@ open class WalletConnector {
     public var urlString: String?
     public weak var delegate: WalletConnectorDelegate?
     
+    private let appName: String
+    private let appDescription: String
+    private let icons: [URL]
+    private let url: URL
     private let sessionKey = "WalletConnector.Session"
     private var client: Client?
     private var session: Session?
     private let userDefaults: UserDefaults
     
-    public init(userDefaults: UserDefaults = .standard) {
+    init(
+        appName: String,
+        appDescription: String,
+        icons: [URL] = [],
+        url: URL,
+        userDefaults: UserDefaults
+    ) {
+        self.appName = appName
+        self.appDescription = appDescription
+        self.icons = icons
+        self.url = url
         self.userDefaults = userDefaults
     }
     
+    public convenience init(
+        appName: String,
+        appDescription: String,
+        icons: [URL] = [],
+        url: URL
+    ) {
+        self.init(
+            appName: appName,
+            appDescription: appDescription,
+            icons: icons,
+            url: url,
+            userDefaults: .standard
+        )
+    }
+    
+    /// Opens a connection with the wallet connect bridge. Call this method
+    /// before attempting to link to a wallet.
     public func connect() throws {
         let wcUrl = WCURL(
             topic: UUID().uuidString,
@@ -36,36 +67,28 @@ open class WalletConnector {
             key: try randomKey()
         )
         let clientMeta = Session.ClientMeta(
-            name: "WalletConnector",
-            description: "WalletConnector",
-            icons: [],
-            url: URL(string: "https://bitcoin.org")!
+            name: appName,
+            description: appDescription,
+            icons: icons,
+            url: url
         )
         let dAppInfo = Session.DAppInfo(peerId: UUID().uuidString, peerMeta: clientMeta)
         self.client = Client(delegate: self, dAppInfo: dAppInfo)
         
         try client?.connect(to: wcUrl)
+        self.urlString = wcUrl.absoluteString
     }
     
     func reconnectIfNeeded() throws {
-        if let previousSessionObject = userDefaults.object(forKey: sessionKey) as? Data,
-           let session = try JSONDecoder().decode(Session.self, from: previousSessionObject) {
+        if let previousSessionObject = userDefaults.object(forKey: sessionKey) as? Data {
+            let session = try JSONDecoder().decode(Session.self, from: previousSessionObject)
             client = Client(delegate: self, dAppInfo: session.dAppInfo)
             try client?.reconnect(to: session)
         }
     }
-    
-    // https://developer.apple.com/documentation/security/1399291-secrandomcopybytes
-    private func randomKey() throws -> String {
-        var bytes = [Int8](repeating: 0, count: 32)
-        let status = SecRandomCopyBytes(kSecRandomDefault, bytes.count, &bytes)
-        if status == errSecSuccess {
-            return Data(bytes: bytes, count: 32).toHexString()
-        } else {
-            throw WalletConnectorError.failedToCreateKey
-        }
-    }
 }
+
+// MARK: - ClientDelegate
 
 extension WalletConnector: ClientDelegate {
     
@@ -83,5 +106,21 @@ extension WalletConnector: ClientDelegate {
     public func client(_ client: Client, didDisconnect session: Session) {
         userDefaults.removeObject(forKey: sessionKey)
         delegate?.walletConnectorDidDisconnect(self)
+    }
+}
+
+// MARK: - Private
+
+private extension WalletConnector {
+    
+    // https://developer.apple.com/documentation/security/1399291-secrandomcopybytes
+    private func randomKey() throws -> String {
+        var bytes = [Int8](repeating: 0, count: 32)
+        let status = SecRandomCopyBytes(kSecRandomDefault, bytes.count, &bytes)
+        if status == errSecSuccess {
+            return Data(bytes: bytes, count: 32).toHexString()
+        } else {
+            throw WalletConnectorError.failedToCreateKey
+        }
     }
 }
