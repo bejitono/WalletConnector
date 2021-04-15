@@ -1,2 +1,3 @@
 # WalletConnector
-Connects an app with an existing Ethereum wallet.
+
+A description of this package.
