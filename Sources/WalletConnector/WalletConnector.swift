@@ -79,13 +79,21 @@ open class WalletConnector {
         self.urlString = wcUrl.absoluteString
     }
     
-    func reconnectIfNeeded() throws {
+    public func reconnectIfNeeded() throws {
         if let previousSessionObject = userDefaults.object(forKey: sessionKey) as? Data {
             let session = try JSONDecoder().decode(Session.self, from: previousSessionObject)
             client = Client(delegate: self, dAppInfo: session.dAppInfo)
             try client?.reconnect(to: session)
         }
     }
+    
+    public func deeplinkURL(fromBaseURL baseURL: URL) -> URL? {
+        guard let wcUrlString = urlString else { return nil }
+        let urlString = baseURL.absoluteString + "//wc?uri=" + wcUrlString // improve
+        return URL(string: urlString)
+    }
+    
+    // TODO: add sign/transact methods
 }
 
 // MARK: - ClientDelegate
