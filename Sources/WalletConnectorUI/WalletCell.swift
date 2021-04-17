@@ -1,5 +1,5 @@
 //
-//  WalletButton.swift
+//  WalletCell.swift
 //  
 //
 //  Created by Stefano on 16.04.21.
@@ -7,34 +7,32 @@
 
 import UIKit
 
-open class WalletButton: UIButton {
+final class WalletCell: UICollectionViewCell {
     
-    public let name: String
-    public let deeplinkBaseURL: URL
+    static let reuseId = "WalletConnector.WalletCell"
     
     private let containerStackView = UIStackView()
     private let iconImageView = UIImageView()
     private let nameLabel = UILabel()
-    private let icon: UIImage
     
-    public init(frame: CGRect = .zero,
-                name: String,
-                icon: UIImage,
-                deeplinkBaseURL: URL) {
-        self.name = name
-        self.icon = icon
-        self.deeplinkBaseURL = deeplinkBaseURL
+    override init(frame: CGRect) {
         super.init(frame: frame)
+        setupViews()
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
-    required public init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    func configure(name: String, icon: UIImage?) {
+        iconImageView.image = icon?.withRenderingMode(.alwaysOriginal)
+        nameLabel.text = name
     }
 }
 
 // MARK: - View Setup
 
-private extension WalletButton {
+private extension WalletCell {
     
     func setupViews() {
         setupContainerStackView()
@@ -44,32 +42,35 @@ private extension WalletButton {
     
     func setupContainerStackView() {
         containerStackView.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(containerStackView)
+        contentView.addSubview(containerStackView)
         NSLayoutConstraint.activate([
-            containerStackView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            containerStackView.topAnchor.constraint(equalTo: topAnchor),
-            containerStackView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            containerStackView.trailingAnchor.constraint(equalTo: trailingAnchor)
+            containerStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            containerStackView.topAnchor.constraint(equalTo: contentView.topAnchor),
+            containerStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            containerStackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
         ])
-        
+        containerStackView.axis = .vertical
+        containerStackView.distribution = .fillProportionally
         containerStackView.spacing = .spacing
     }
     
     func setupIconImageView() {
         containerStackView.addArrangedSubview(iconImageView)
-        iconImageView.image = icon
+        iconImageView.layer.cornerRadius = .cornerRadius
+        iconImageView.layer.masksToBounds = true
         iconImageView.applyShadow()
+        iconImageView.contentMode = .scaleAspectFill
     }
     
     func setupNameLabel() {
         containerStackView.addArrangedSubview(nameLabel)
-        nameLabel.text = name
         nameLabel.font = UIFont.systemFont(ofSize: .titleSize)
-        nameLabel.textColor = .gray
+        nameLabel.textColor = Colors.text
+        nameLabel.textAlignment = .center
     }
 }
 
-private extension UIView {
+extension UIView {
     
     func applyShadow() {
         layer.shadowColor = UIColor(red: 0.196, green: 0.196, blue: 0.279, alpha: 0.06).cgColor
@@ -82,6 +83,7 @@ private extension UIView {
 // MARK: - View Constants
 
 private extension CGFloat {
-    static let spacing: CGFloat = 6
-    static let titleSize: CGFloat = 12
+    static let spacing: CGFloat = 3
+    static let titleSize: CGFloat = 10
+    static let cornerRadius: CGFloat = 12
 }
