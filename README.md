@@ -33,7 +33,7 @@ if let url = URL(string: urlString), UIApplication.shared.canOpenURL(url) {
 
 #### WalletConnectorUI
 
-You can also `WalletConnectorViewController` to show a modal of wallets to connect your app to.
+You can also `WalletConnectorViewController` to show a modal of wallets to connect your app to. You will also have to add all supported wallet deeplinks to your Info.plist.
 
 <img width="312" alt="Screenshot 2021-04-17 at 20 34 14" src="https://user-images.githubusercontent.com/48912582/115115000-4843c100-9fbc-11eb-927e-46d8a2edfeff.png">
 
