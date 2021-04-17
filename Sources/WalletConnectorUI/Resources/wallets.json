@@ -1,0 +1,312 @@
+{
+  "1ae92b26df02f0abca6304df07debccd18262fdf5fe82daa81593582dac9a369": {
+    "id": "1ae92b26df02f0abca6304df07debccd18262fdf5fe82daa81593582dac9a369",
+    "name": "Rainbow",
+    "homepage": "https://rainbow.me/",
+    "chains": [
+      "eip155:1"
+    ],
+    "app": {
+      "browser": "",
+      "ios": "https://apps.apple.com/us/app/rainbow-ethereum-wallet/id1457119021",
+      "android": "",
+      "mac": "",
+      "windows": "",
+      "linux": ""
+    },
+    "mobile": {
+      "native": "rainbow:",
+      "universal": "https://rnbwapp.com"
+    },
+    "desktop": {
+      "native": "",
+      "universal": ""
+    },
+    "metadata": {
+      "shortName": "Rainbow",
+      "colors": {
+        "primary": "rgb(0, 30, 89)",
+        "secondary": ""
+      }
+    }
+  },
+  "4622a2b2d6af1c9844944291e5e7351a6aa24cd7b23099efac1b2fd875da31a0": {
+    "id": "4622a2b2d6af1c9844944291e5e7351a6aa24cd7b23099efac1b2fd875da31a0",
+    "name": "Trust Wallet",
+    "homepage": "https://trustwallet.com/",
+    "chains": [
+      "eip155:1"
+    ],
+    "app": {
+      "browser": "",
+      "ios": "https://apps.apple.com/app/apple-store/id1288339409",
+      "android": "https://play.google.com/store/apps/details?id=com.wallet.crypto.trustapp",
+      "mac": "",
+      "windows": "",
+      "linux": ""
+    },
+    "mobile": {
+      "native": "trust:",
+      "universal": "https://link.trustwallet.com"
+    },
+    "desktop": {
+      "native": "",
+      "universal": ""
+    },
+    "metadata": {
+      "shortName": "Trust",
+      "colors": {
+        "primary": "rgb(51, 117, 187)",
+        "secondary": ""
+      }
+    }
+  },
+  "cf21952a9bc8108bf13b12c92443751e2cc388d27008be4201b92bbc6d83dd46": {
+    "id": "cf21952a9bc8108bf13b12c92443751e2cc388d27008be4201b92bbc6d83dd46",
+    "name": "Argent",
+    "homepage": "https://argent.xyz/",
+    "chains": [
+      "eip155:1"
+    ],
+    "app": {
+      "browser": "",
+      "ios": "https://apps.apple.com/us/app/argent/id1358741926",
+      "android": "https://play.google.com/store/apps/details?id=im.argent.contractwalletclient",
+      "mac": "",
+      "windows": "",
+      "linux": ""
+    },
+    "mobile": {
+      "native": "argent://app",
+      "universal": "https://argent.link/app"
+    },
+    "desktop": {
+      "native": "",
+      "universal": ""
+    },
+    "metadata": {
+      "shortName": "Argent",
+      "colors": {
+        "primary": "rgb(255, 135, 91)",
+        "secondary": ""
+      }
+    }
+  },
+  "c57ca95b47569778a828d19178114f4db188b89b763c899ba0be274e97267d96": {
+    "id": "c57ca95b47569778a828d19178114f4db188b89b763c899ba0be274e97267d96",
+    "name": "MetaMask",
+    "homepage": "https://metamask.io/",
+    "chains": [
+      "eip155:1"
+    ],
+    "app": {
+      "browser": "",
+      "ios": "https://apps.apple.com/us/app/metamask/id1438144202",
+      "android": "https://play.google.com/store/apps/details?id=io.metamask",
+      "mac": "",
+      "windows": "",
+      "linux": ""
+    },
+    "mobile": {
+      "native": "metamask:",
+      "universal": "https://metamask.app.link"
+    },
+    "desktop": {
+      "native": "",
+      "universal": ""
+    },
+    "metadata": {
+      "shortName": "MetaMask",
+      "colors": {
+        "primary": "rgb(255, 255, 255)",
+        "secondary": ""
+      }
+    }
+  },
+  "f2436c67184f158d1beda5df53298ee84abfc367581e4505134b5bcf5f46697d": {
+    "id": "f2436c67184f158d1beda5df53298ee84abfc367581e4505134b5bcf5f46697d",
+    "name": "Crypto.com | DeFi Wallet",
+    "homepage": "https://crypto.com/",
+    "chains": [
+      "eip155:1"
+    ],
+    "app": {
+      "browser": "",
+      "ios": "https://apps.apple.com/us/app/id1262148500",
+      "android": "https://play.google.com/store/apps/details?id=co.mona.android",
+      "mac": "",
+      "windows": "",
+      "linux": ""
+    },
+    "mobile": {
+      "native": "cryptowallet:",
+      "universal": "https://wallet.crypto.com"
+    },
+    "desktop": {
+      "native": "",
+      "universal": ""
+    },
+    "metadata": {
+      "shortName": "Crypto.com",
+      "colors": {
+        "primary": "rgb(17, 153, 250)",
+        "secondary": ""
+      }
+    }
+  },
+  "7674bb4e353bf52886768a3ddc2a4562ce2f4191c80831291218ebd90f5f5e26": {
+    "id": "7674bb4e353bf52886768a3ddc2a4562ce2f4191c80831291218ebd90f5f5e26",
+    "name": "MathWallet",
+    "homepage": "https://mathwallet.org/",
+    "chains": [
+      "eip155:1"
+    ],
+    "app": {
+      "browser": "",
+      "ios": "https://apps.apple.com/us/app/math-wallet-blockchain-wallet/id1383637331",
+      "android": "https://play.google.com/store/apps/details?id=com.medishares.android",
+      "mac": "",
+      "windows": "",
+      "linux": ""
+    },
+    "mobile": {
+      "native": "mathwallet:",
+      "universal": "https://www.mathwallet.org"
+    },
+    "desktop": {
+      "native": "",
+      "universal": ""
+    },
+    "metadata": {
+      "shortName": "MathWallet",
+      "colors": {
+        "primary": "",
+        "secondary": ""
+      }
+    }
+  },
+  "ccb714920401f7d008dbe11281ae70e3a4bfb621763b187b9e4a3ce1ab8faa3b": {
+    "id": "ccb714920401f7d008dbe11281ae70e3a4bfb621763b187b9e4a3ce1ab8faa3b",
+    "name": "BitPay",
+    "homepage": "https://bitpay.com",
+    "chains": [
+      "eip155:1"
+    ],
+    "app": {
+      "browser": "",
+      "ios": "https://apps.apple.com/us/app/bitpay-buy-crypto/id1149581638",
+      "android": "https://play.google.com/store/apps/details?id=com.bitpay.wallet",
+      "mac": "",
+      "windows": "",
+      "linux": ""
+    },
+    "mobile": {
+      "native": "bitpay:",
+      "universal": "https://bitpay.com/wallet"
+    },
+    "desktop": {
+      "native": "",
+      "universal": ""
+    },
+    "metadata": {
+      "shortName": "BitPay",
+      "colors": {
+        "primary": "rgb(26, 59, 139)",
+        "secondary": ""
+      }
+    }
+  },
+  "4ab2542c2799c825a8465ba5ab8aa7def52b7904f38b74484af917ed9c0fc4e5": {
+    "id": "4ab2542c2799c825a8465ba5ab8aa7def52b7904f38b74484af917ed9c0fc4e5",
+    "name": "Ledger Live",
+    "homepage": "https://www.ledger.com/",
+    "chains": [
+      "eip155:1"
+    ],
+    "app": {
+      "browser": "",
+      "ios": "https://itunes.apple.com/app/id1361671700",
+      "android": "https://play.google.com/store/apps/details?id=com.ledger.live",
+      "mac": "",
+      "windows": "",
+      "linux": ""
+    },
+    "mobile": {
+      "native": "ledgerlive:",
+      "universal": ""
+    },
+    "desktop": {
+      "native": "",
+      "universal": ""
+    },
+    "metadata": {
+      "shortName": "Ledger",
+      "colors": {
+        "primary": "rgb(255, 255, 255)",
+        "secondary": ""
+      }
+    }
+  },
+  "bae74827272509a6d63ea25514d9c68ad235c14e45e183518c7ded4572a1b0c4": {
+    "id": "bae74827272509a6d63ea25514d9c68ad235c14e45e183518c7ded4572a1b0c4",
+    "name": "Huobi Wallet",
+    "homepage": "https://huobiwallet.com/",
+    "chains": [
+      "eip155:1"
+    ],
+    "app": {
+      "browser": "",
+      "ios": "https://apps.apple.com/us/app/id1433883012",
+      "android": "https://play.google.com/store/apps/details?id=com.huobionchainwallet.gp",
+      "mac": "",
+      "windows": "",
+      "linux": ""
+    },
+    "mobile": {
+      "native": "huobiwallet:",
+      "universal": ""
+    },
+    "desktop": {
+      "native": "",
+      "universal": ""
+    },
+    "metadata": {
+      "shortName": "Huobi",
+      "colors": {
+        "primary": "rgb(45,101,248)",
+        "secondary": ""
+      }
+    }
+  },
+  "dcf291a025ead3e94ef694fa75617568daf76bf1e525bb240ecf5bf1add53756": {
+    "id": "dcf291a025ead3e94ef694fa75617568daf76bf1e525bb240ecf5bf1add53756",
+    "name": "Loopring Wallet",
+    "homepage": "https://loopring.io",
+    "chains": [
+      "eip155:1"
+    ],
+    "app": {
+      "browser": "",
+      "ios": "https://apps.apple.com/us/app/loopring-smart-wallet/id1550921126",
+      "android": "https://play.google.com/store/apps/details?id=loopring.defi.wallet",
+      "mac": "",
+      "windows": "",
+      "linux": ""
+    },
+    "mobile": {
+      "native": "",
+      "universal": ""
+    },
+    "desktop": {
+      "native": "",
+      "universal": ""
+    },
+    "metadata": {
+      "shortName": "Loopring",
+      "colors": {
+        "primary": "",
+        "secondary": ""
+      }
+    }
+  }
+}

@@ -25,7 +25,8 @@ let package = Package(
             dependencies: ["WalletConnectSwift"]),
         .target(
             name: "WalletConnectorUI",
-            dependencies: ["WalletConnector"]),
+            dependencies: ["WalletConnector"],
+            resources: [.process("Resources")]),
         .testTarget(
             name: "WalletConnectorTests",
             dependencies: ["WalletConnector"]),
