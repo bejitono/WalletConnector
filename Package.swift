@@ -17,7 +17,7 @@ let package = Package(
     dependencies: [
         .package(
             url: "https://github.com/WalletConnect/WalletConnectSwift.git",
-            from: Version(1, 3, 1)),
+            from: Version(1, 5, 0)),
     ],
     targets: [
         .target(

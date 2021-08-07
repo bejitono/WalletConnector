@@ -11,6 +11,7 @@ import WalletConnectSwift
 public protocol WalletConnectorDelegate: AnyObject {
     
     func walletConnectorDidConnect(_ connector: WalletConnector)
+    func walletConnectorDidUpdate(_ connector: WalletConnector)
     func walletConnectorDidDisconnect(_ connector: WalletConnector)
     func walletConnectorDidFailToConnect(_ connector: WalletConnector)
 }
@@ -109,6 +110,18 @@ extension WalletConnector: ClientDelegate {
         let sessionData = try? JSONEncoder().encode(session)
         userDefaults.set(sessionData, forKey: sessionKey)
         delegate?.walletConnectorDidConnect(self)
+    }
+    
+    public func client(_ client: Client, didConnect url: WCURL) {
+        userDefaults.set(url.key, forKey: sessionKey)
+        delegate?.walletConnectorDidConnect(self)
+    }
+    
+    public func client(_ client: Client, didUpdate session: Session) {
+        self.session = session
+        let sessionData = try? JSONEncoder().encode(session)
+        userDefaults.set(sessionData, forKey: sessionKey)
+        delegate?.walletConnectorDidUpdate(self)
     }
 
     public func client(_ client: Client, didDisconnect session: Session) {

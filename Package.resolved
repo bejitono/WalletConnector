@@ -6,8 +6,8 @@
         "repositoryURL": "https://github.com/krzyzanowskim/CryptoSwift.git",
         "state": {
           "branch": null,
-          "revision": "79ac632c85df81f2618dd838fc3869633e163370",
-          "version": "1.2.0"
+          "revision": "8d4f6384e0a8cc41f2005247241dd553963a492a",
+          "version": "1.4.1"
         }
       },
       {
@@ -33,8 +33,8 @@
         "repositoryURL": "https://github.com/WalletConnect/WalletConnectSwift.git",
         "state": {
           "branch": null,
-          "revision": "0d9843db1370001ac4e684a9035433d70d4bad71",
-          "version": "1.3.1"
+          "revision": "76bd8b65be612d98918709959516f9ad6ea9cfef",
+          "version": "1.5.0"
         }
       }
     ]
